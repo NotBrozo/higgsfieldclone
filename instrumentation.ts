@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Boot hook: validate the environment (production fails fast with a clear
  * list of missing variables) and, in development, run the reconciler every
  * few seconds — there is no Vercel Cron locally and webhooks need a tunnel.
@@ -10,10 +10,10 @@ export async function register() {
   if (value.NODE_ENV !== "development" || !value.MONGODB_URI) return
   if (process.env.DEV_RECONCILE === "false") return
   const globalFlag = globalThis as typeof globalThis & {
-    __vireoReconciler?: boolean
+    __LUMINAReconciler?: boolean
   }
-  if (globalFlag.__vireoReconciler) return
-  globalFlag.__vireoReconciler = true
+  if (globalFlag.__LUMINAReconciler) return
+  globalFlag.__LUMINAReconciler = true
   const { reconcile } = await import("./lib/generations/reconcile")
   const tick = async () => {
     try {

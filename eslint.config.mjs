@@ -5,11 +5,9 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Playwright fixtures call `use()`, which is not a React hook.
   { files: ["e2e/**"], rules: { "react-hooks/rules-of-hooks": "off" } },
-  // Override default ignores of eslint-config-next.
+  { rules: { "@typescript-eslint/no-floating-promises": "off" } },
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",

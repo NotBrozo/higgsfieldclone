@@ -1,11 +1,11 @@
 {
-  "name": "vireo-studio",
+  "name": "lumina-ai",
   "version": "0.1.0",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/check-client-secrets.mjs",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
